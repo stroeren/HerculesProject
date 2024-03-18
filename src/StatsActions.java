@@ -1,3 +1,5 @@
+import java.util.Random;
+
 class StatsActions{
     class Player {
         private String name;
@@ -26,8 +28,8 @@ class StatsActions{
         }
     
         public void attackBow() {
-            // implementation
-            randomNumber = random.nextInt(101); // Generates a number between 0 (inclusive) and 101 (exclusive)
+            // Declare and initialize the randomNumber variable
+            int randomNumber = new Random().nextInt(101); // Generates a number between 0 (inclusive) and 101 (exclusive)
 
             // Check if the number is above 70
             if (randomNumber > 70) {
@@ -49,9 +51,9 @@ class StatsActions{
         private int lvl;
         public int getEnemyHp() {
             return hp;
-            }
+        }
         public void attack() {
-            randomAttack = random.nextInt(20);
+            int randomAttack = new Random().nextInt(10);
             takeDamage(randomAttack);
         }
     }
@@ -98,6 +100,7 @@ class StatsActions{
         }
     }
     public void dealDamage(int damage) {
+        int hpEnemy;
         hpEnemy -= damage;
         System.out.println("Monster took " + attackValue + " damage.");
         if (hpEnemy <= 0) {
