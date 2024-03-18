@@ -1,5 +1,3 @@
-import java.util.Random;
-
 class StatsActions{
     class Player {
         private String name;
@@ -28,20 +26,20 @@ class StatsActions{
         }
     
         public void attackBow() {
-            // Declare and initialize the randomNumber variable
-            int randomNumber = new Random().nextInt(101); // Generates a number between 0 (inclusive) and 101 (exclusive)
+            // implementation
+            randomNumber = random.nextInt(101); // 70% chance of the Bow attack landing
 
             // Check if the number is above 70
             if (randomNumber > 70) {
                 System.out.println("The shot landed!");
-
+                dealDamage(60);
             } else {
                 System.out.println("The shot missed...");
             }
         }
     
         public void attackClub() {
-            // implementation
+            dealDamage(30);
         }
     
     // Monster class (NPC subclass)
@@ -51,9 +49,12 @@ class StatsActions{
         private int lvl;
         public int getEnemyHp() {
             return hp;
-        }
+            }
+        public void setEnemyHp(int newHp) {
+            this.hp = newHp;
+        }        
         public void attack() {
-            int randomAttack = new Random().nextInt(10);
+            randomAttack = random.nextInt(20);
             takeDamage(randomAttack);
         }
     }
@@ -78,32 +79,20 @@ class StatsActions{
     class Sword {
         private int attackValue;
         private int accuracy = 100;
-        public void meleeAttack() {
-            // implementation
-        }
-    
-        public void equip() {
-            // implementation
-        }
     }
     
     // Bow class
     class Bow {
         private int attackValue;
         private int accuracy = 70;
-        public void rangedAttack() {
-            // implementation
-        }
-    
-        public void equip() {
-            // implementation
-        }
     }
     public void dealDamage(int damage) {
-        int hpEnemy;
-        hpEnemy -= damage;
-        System.out.println("Monster took " + attackValue + " damage.");
-        if (hpEnemy <= 0) {
+        Enemy enemy = new Enemy();
+        enemy.setEnemyHp(hp -= damage);
+        System.out.println("Monster took " + damage + " damage.");
+        System.out.println("The monster's health is: " + enemy.getEnemyHp());
+        
+        if (enemy.getEnemyHp()<= 0) {
             System.out.println("Monster is defeated!");
         }
     }
