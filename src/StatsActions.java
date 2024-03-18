@@ -32,14 +32,14 @@ class StatsActions{
             // Check if the number is above 70
             if (randomNumber > 70) {
                 System.out.println("The shot landed!");
-                dealDamage(60);
+                dealDamage(bowAttackValue);
             } else {
                 System.out.println("The shot missed...");
             }
         }
     
         public void attackClub() {
-            dealDamage(30);
+            dealDamage(swordAttackValue);
         }
     
     // Monster class (NPC subclass)
@@ -54,7 +54,7 @@ class StatsActions{
             this.hp = newHp;
         }        
         public void attack() {
-            randomAttack = random.nextInt(20);
+            randomAttack = random.nextInt(25);
             takeDamage(randomAttack);
         }
     }
@@ -77,13 +77,13 @@ class StatsActions{
     
     // Sword class
     class Sword {
-        private int attackValue;
+        private int swordAttackValue=30;
         private int accuracy = 100;
     }
     
     // Bow class
     class Bow {
-        private int attackValue;
+        private int bowAttackValue=60;
         private int accuracy = 70;
     }
     public void dealDamage(int damage) {
