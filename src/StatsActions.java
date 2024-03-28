@@ -5,7 +5,7 @@ class StatsActions{
         private int lvl = 1;
         private int reputation;
         // Getter method for hp
-        public int getPlayerHp() {
+        public int getPlayerHp() {    
         return hp;
         }
         // Setter method for hp (Updates the HP with the damage taken)
@@ -62,7 +62,18 @@ class StatsActions{
     // NPC class
     class NPC {
         public void talk() {
-            // implementation
+            switch(reputation){
+                case 1: 
+                System.out.println("What do you want? Leave me alone, I'm working.");
+                case 2:
+                System.out.println("Thanks for your hard work!");
+                case 3:
+                System.out.println("Thank you again! Take these weapons for your troubles!");
+                bowAttackValue = 80;
+                swordAttackValue = 50;
+
+            }
+            
         }
     
         private boolean passive;
@@ -77,13 +88,13 @@ class StatsActions{
     
     // Sword class
     class Sword {
-        private int swordAttackValue=30;
+        int swordAttackValue=30;
         private int accuracy = 100;
     }
     
     // Bow class
     class Bow {
-        private int bowAttackValue=60;
+        int bowAttackValue=60;
         private int accuracy = 70;
     }
     public void dealDamage(int damage) {
