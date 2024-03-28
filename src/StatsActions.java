@@ -1,9 +1,8 @@
 class StatsActions{
     class Player {
-        private String name;
         private int hp = 100;
-        private int lvl = 1;
-        private int reputation;
+        public int reputation=1;
+        
         // Getter method for hp
         public int getPlayerHp() {    
         return hp;
@@ -43,9 +42,9 @@ class StatsActions{
         }
     
     // Monster class (NPC subclass)
-    class Monster extends NPC {
+    class Monster{
         private String name;
-        private int hp;
+        private int hp=70;
         private int lvl;
         public int getEnemyHp() {
             return hp;
@@ -55,7 +54,7 @@ class StatsActions{
         }        
         public void attack() {
             randomAttack = random.nextInt(25);
-            takeDamage(randomAttack);
+            takeDamage(randomAttack*reputation);
         }
     }
     
@@ -71,12 +70,11 @@ class StatsActions{
                 System.out.println("Thank you again! Take these weapons for your troubles!");
                 bowAttackValue = 80;
                 swordAttackValue = 50;
-
+                case 4:
+                System.out.println("Thank you again! Now I can return back to my peaceful life!");
             }
             
         }
-    
-        private boolean passive;
     }
     
     // Environment class
@@ -115,5 +113,9 @@ class StatsActions{
         if (player.getPlayerHp() <= 0) {
             System.out.println("You Died!");
         }
+    }
+    public void endBattle(){
+        Player player = new Player();
+        player.setPlayerHp(hp*reputation);
     }
 }
