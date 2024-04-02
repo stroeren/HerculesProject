@@ -65,7 +65,7 @@ class StatsActions{
                 case 1: 
                 System.out.println("What do you want? Leave me alone, I'm working.");
                 break;
-                case (reputation > 10):
+                case 2:
                 System.out.println("Thanks for your hard work!");
                 break;
                 case 3:
@@ -91,7 +91,7 @@ class StatsActions{
     // Sword class
     class Sword {
         public int swordAttackValue=30;
-        private int accuracy = 100;
+        private int accuracy = 100; 
     }
     
     // Bow class
@@ -107,6 +107,7 @@ class StatsActions{
         
         if (enemy.getEnemyHp() <= 0) {
             System.out.println("Monster is defeated!");
+            endBattle();
         }
     }
     
