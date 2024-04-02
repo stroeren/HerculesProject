@@ -145,5 +145,6 @@ class StatsActions{
     public void endBattle(){
         Player player = new Player();
         player.setPlayerHp(hp*reputation);
+        reputation = reputation + 1;
     }
 }
