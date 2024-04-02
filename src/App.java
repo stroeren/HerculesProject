@@ -59,4 +59,5 @@ public class App extends GameApplication {
     protected void onUpdate(double tpf) {
         // Game logic here, executed every frame
     }
+    
 }
