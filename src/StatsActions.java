@@ -108,4 +108,6 @@ class StatsActions{
         Player player = new Player();
         player.setPlayerHp(player.getPlayerHp()*player.reputation);
     }
+
+    
 }
