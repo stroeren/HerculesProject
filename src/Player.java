@@ -1,12 +1,6 @@
-class Player {
-    private int hp = 100;
-    public int reputation=1;
+public class Player extends Character{
 
-    public int getPlayerHp() {    
-        return hp;
-    }
-
-    public void setPlayerHp(int newHp) {
-        this.hp = newHp;
+    public Player(String name, int maxHP) {
+        super(name,maxHP);
     }
 }
