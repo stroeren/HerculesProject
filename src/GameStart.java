@@ -9,7 +9,7 @@ public class GameStart {
         String name = scanner.nextLine();
         System.out.println("Hello, " + name + "!");
         //Sets player name and HP
-        player = new Player(name,100);
+        player = new Player(name,100,100);
         scanner.close();
     }
 }

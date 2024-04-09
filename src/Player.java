@@ -1,6 +1,6 @@
 public class Player extends Character{
-
-    public Player(String name, int maxHP) {
-        super(name,maxHP);
+    int reputation;
+    public Player(String name, int maxHP, int hp) {
+        super(name,maxHP,hp);
     }
 }
